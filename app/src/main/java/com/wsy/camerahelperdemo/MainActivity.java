@@ -112,6 +112,11 @@ public class MainActivity extends AppCompatActivity implements ViewTreeObserver.
                     ByteArrayOutputStream baos = new ByteArrayOutputStream();
                     yuvImage.compressToJpeg(new Rect(0,0,width,height),100,baos);
                     byte[] nv21Data = baos.toByteArray();
+                     try {
+                        baos.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     Bitmap bitmap = BitmapFactory.decodeByteArray(nv21Data,0,nv21Data.length);
                     bitmap = getRotateBitmap(bitmap, 360 - displayOrientation);
                     final Bitmap finalBitmap = bitmap;
