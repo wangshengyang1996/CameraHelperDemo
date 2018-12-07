@@ -25,7 +25,7 @@ import com.wsy.camerahelperdemo.camera.CameraHelper;
 import com.wsy.camerahelperdemo.camera.CameraListener;
 
 import java.io.ByteArrayOutputStream;
-
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity implements ViewTreeObserver.OnGlobalLayoutListener {
     private static final String TAG = "MainActivity";
